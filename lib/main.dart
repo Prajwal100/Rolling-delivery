@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rollingdelivery/pages/HomePage.dart';
+import 'package:rollingdelivery/Pages/HomePage.dart';
 import 'package:rollingdelivery/pages/OrderPage.dart';
 import 'package:rollingdelivery/pages/SettingPage.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:rollingdelivery/color.dart' as color;
 
-import 'Pages/HomePage.dart';
+import 'package:rollingdelivery/color.dart' as color;
 
 void main() {
   runApp(MaterialApp(
@@ -31,13 +29,14 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
-    _children.add(OrderPage());
+    _children.add(HomePage());
     _children.add(OrderPage());
     _children.add(OrderPage());
     _children.add(SettingPage());
-
+    _children.add(SettingPage());
     _appBars.add(_buildAppBar());
     _appBars.add(_buildAppBarOne("Orders"));
+    _appBars.add(_buildAppBarOne("My History"));
     _appBars.add(_buildAppBarOne("My History"));
     _appBars.add(_buildAppBarSettings("Settings"));
     super.initState();
@@ -160,6 +159,10 @@ class _MainPageState extends State<MainPage> {
         BottomNavigationBarItem(
             icon: Icon(Icons.history),
             title: Text("History",
+                style: GoogleFonts.robotoCondensed(fontSize: 16))),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.bookmark_border),
+            title: Text("Favorite",
                 style: GoogleFonts.robotoCondensed(fontSize: 16))),
         BottomNavigationBarItem(
             icon: Icon(Icons.settings),
