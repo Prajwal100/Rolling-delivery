@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rollingdelivery/Pages/detailPage.dart';
 import 'package:rollingdelivery/color.dart' as color;
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
@@ -15,7 +16,6 @@ class confirmBook extends StatefulWidget {
 
 class _confirmBookState extends State<confirmBook> {
   Completer<GoogleMapController> _controller = Completer();
-
   static const LatLng _center = const LatLng(45.521563, -122.677433);
 
   void _onMapCreated(GoogleMapController controller) {
@@ -24,6 +24,8 @@ class _confirmBookState extends State<confirmBook> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime selectedDate = DateTime.now();
+
     return Scaffold(
       body: Stack(
         children: [
@@ -128,7 +130,7 @@ class _confirmBookState extends State<confirmBook> {
             child: Padding(
               padding: const EdgeInsets.all(0.0),
               child: Container(
-                  height: 310,
+                  height: 230,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -165,7 +167,7 @@ class _confirmBookState extends State<confirmBook> {
                                   // isExpanded: true,
                                   items: [
                                     new DropdownMenuItem(
-                                        child: new Text("Abc")),
+                                        child: new Text("Bike number")),
                                     new DropdownMenuItem(
                                         child: new Text("Xyz")),
                                   ],
@@ -177,16 +179,27 @@ class _confirmBookState extends State<confirmBook> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                DropdownButton(
-                                  // isExpanded: true,
-                                  items: [
-                                    new DropdownMenuItem(
-                                        child: new Text("Abc")),
-                                    new DropdownMenuItem(
-                                        child: new Text("Xyz")),
+                                Row(
+                                  children: [
+                                    FaIcon(
+                                      FontAwesomeIcons.moneyBill,
+                                      size: 16,
+                                    ),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    DropdownButton(
+                                      // isExpanded: true,
+                                      items: [
+                                        new DropdownMenuItem(
+                                            child: new Text("Cash")),
+                                        new DropdownMenuItem(
+                                            child: new Text("e-sewa")),
+                                      ],
+                                      hint: new Text("Select City"),
+                                      onChanged: (value) {},
+                                    ),
                                   ],
-                                  hint: new Text("Select City"),
-                                  onChanged: (value) {},
                                 ),
                                 Text(
                                   'Rs.200.00',
@@ -197,31 +210,66 @@ class _confirmBookState extends State<confirmBook> {
                             ),
                             Row(
                               children: [
-                                Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                      color: color.primary,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(50))),
-                                  child: Icon(
-                                    Icons.date_range,
-                                    color: Colors.white,
-                                    size: 24,
+                                Expanded(
+                                  child: FlatButton(
+                                    color: color.primary,
+                                    onPressed: () => {},
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(14.0),
+                                      child: Row(
+                                        children: [
+                                          FaIcon(
+                                            FontAwesomeIcons.calendarDay,
+                                            color: Colors.white,
+                                            size: 16,
+                                          ),
+                                          SizedBox(
+                                            width: 4,
+                                          ),
+                                          Text(
+                                            'Set Pickup',
+                                            style: GoogleFonts.robotoCondensed(
+                                                textStyle: TextStyle(
+                                                    fontSize: 22,
+                                                    color: Colors.white)),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
+                                ),
+                                SizedBox(
+                                  width: 6,
                                 ),
                                 Expanded(
                                   child: FlatButton(
                                     color: color.primary,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                        builder: (context) => detailPage(),
+                                      ));
+                                    },
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
-                                      child: Text(
-                                        'Confirm',
-                                        style: GoogleFonts.robotoCondensed(
-                                            textStyle: TextStyle(
-                                                fontSize: 22,
-                                                color: Colors.white)),
+                                      child: Row(
+                                        children: [
+                                          FaIcon(
+                                            FontAwesomeIcons.paperPlane,
+                                            color: Colors.white,
+                                            size: 16,
+                                          ),
+                                          SizedBox(
+                                            width: 4,
+                                          ),
+                                          Text(
+                                            'Confirm',
+                                            style: GoogleFonts.robotoCondensed(
+                                                textStyle: TextStyle(
+                                                    fontSize: 22,
+                                                    color: Colors.white)),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -240,3 +288,18 @@ class _confirmBookState extends State<confirmBook> {
     );
   }
 }
+
+// _selectDate(BuildContext context) async {
+//   DateTime selectedDate = DateTime.now();
+
+//   final DateTime picked = await showDatePicker(
+//     context: context,
+//     initialDate: selectedDate, // Refer step 1
+//     firstDate: DateTime(2000),
+//     lastDate: DateTime(2025),
+//   );
+//   if (picked != null && picked != selectedDate)
+//     setState(() {
+//       selectedDate = picked;
+//     });
+// }

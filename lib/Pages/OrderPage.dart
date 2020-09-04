@@ -53,757 +53,1290 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
             ],
           ),
         ),
-        Container(
-          height: 490,
+        Expanded(
           child: TabBarView(
             controller: _tabController,
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-                padding: const EdgeInsets.fromLTRB(18.0, 20, 18.0, 6),
-                color: Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'ORDER NUMBER : 07-ABDH-DE65',
-                      style: GoogleFonts.robotoCondensed(
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 6.0),
-                      child: Text(
-                        'Your order will delivered on Saturday, 20 Feb, 2020',
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontSize: 12, color: Colors.grey[500])),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+                    padding: const EdgeInsets.fromLTRB(18.0, 20, 18.0, 6),
+                    color: Colors.white,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        RichText(
-                          text: TextSpan(
-                              text: ('ITEMS :'),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[500]),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: (" 2"),
-                                    style: TextStyle(color: Colors.black54))
-                              ]),
+                        Text(
+                          'ORDER NUMBER : 07-ABDH-DE65',
+                          style: GoogleFonts.robotoCondensed(
+                              textStyle: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16)),
                         ),
-                        RichText(
-                          text: TextSpan(
-                              text: ('TOTAL CHARGE:'),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[500]),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: (" Rs. 500"),
-                                    style: TextStyle(color: Colors.black54))
-                              ]),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 6.0),
+                          child: Text(
+                            'Your order will delivered on Saturday, 20 Feb, 2020',
+                            style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    fontSize: 12, color: Colors.grey[500])),
+                          ),
                         ),
-                      ],
-                    ),
-                    Divider(),
-                    Column(
-                      children: [
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 110,
-                              width: 80,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: ExactAssetImage(
-                                          'images/document.jpg'))),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Official documents",
+                            RichText(
+                              text: TextSpan(
+                                  text: ('ITEMS :'),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 16),
+                                      color: Colors.grey[500]),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: (" 2"),
+                                        style: TextStyle(color: Colors.black54))
+                                  ]),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                  text: ('TOTAL CHARGE:'),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[500]),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: (" Rs. 500"),
+                                        style: TextStyle(color: Colors.black54))
+                                  ]),
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          height: 50,
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 110,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: ExactAssetImage(
+                                              'images/document.jpg'))),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Status :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" Urgent"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Official documents",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Status :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Urgent"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Ordered date :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 20 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Delivered By :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Prajwal Rai"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Deadline :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 24 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.times,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("CANCEL")
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Ordered date :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" 20 Feb 2020"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Delivered By :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" Prajwal Rai"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Deadline :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" 24 Feb 2020"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.searchLocation,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("TRACK")
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
                             )
                           ],
                         ),
-                        Row(
+                        Divider(),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
                           children: [
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    FaIcon(
-                                      FontAwesomeIcons.times,
-                                      size: 16,
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text("CANCEL")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    FaIcon(
-                                      FontAwesomeIcons.searchLocation,
-                                      size: 16,
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text("TRACK")
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    Divider(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: 110,
-                              width: 80,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: ExactAssetImage(
-                                          'images/document.jpg'))),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  "Official documents",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
+                                Container(
+                                  height: 110,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: ExactAssetImage(
+                                              'images/document.jpg'))),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Status :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" Urgent"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Official documents",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Status :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Urgent"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Ordered date :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 20 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Delivered By :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Prajwal Rai"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Deadline :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 24 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.times,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("CANCEL")
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Ordered date :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" 20 Feb 2020"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Delivered By :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" Prajwal Rai"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 4.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: ('Deadline :'),
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                        children: <TextSpan>[
-                                          TextSpan(
-                                              text: (" 24 Feb 2020"),
-                                              style: TextStyle(
-                                                  color: Colors.black54))
-                                        ]),
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.searchLocation,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("TRACK")
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
                             )
                           ],
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    FaIcon(
-                                      FontAwesomeIcons.times,
-                                      size: 16,
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text("CANCEL")
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    FaIcon(
-                                      FontAwesomeIcons.searchLocation,
-                                      size: 16,
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Text("TRACK")
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+                    padding: const EdgeInsets.fromLTRB(18.0, 20, 18.0, 6),
+                    color: Colors.white,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'ORDER NUMBER : 07-ABDH-DE65',
+                          style: GoogleFonts.robotoCondensed(
+                              textStyle: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 6.0),
+                          child: Text(
+                            'Your order will delivered on Saturday, 20 Feb, 2020',
+                            style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    fontSize: 12, color: Colors.grey[500])),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                  text: ('ITEMS :'),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[500]),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: (" 2"),
+                                        style: TextStyle(color: Colors.black54))
+                                  ]),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                  text: ('TOTAL CHARGE:'),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey[500]),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                        text: (" Rs. 500"),
+                                        style: TextStyle(color: Colors.black54))
+                                  ]),
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          height: 50,
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 110,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: ExactAssetImage(
+                                              'images/document.jpg'))),
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Official documents",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Status :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Urgent"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Ordered date :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 20 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Delivered By :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Prajwal Rai"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Deadline :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 24 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.times,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("CANCEL")
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.searchLocation,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("TRACK")
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Divider(),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 110,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: ExactAssetImage(
+                                              'images/document.jpg'))),
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Official documents",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Status :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Urgent"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Ordered date :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 20 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Delivered By :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" Prajwal Rai"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 4.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                            text: ('Deadline :'),
+                                            style: TextStyle(
+                                                color: Colors.grey[500]),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: (" 24 Feb 2020"),
+                                                  style: TextStyle(
+                                                      color: Colors.black54))
+                                            ]),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.times,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("CANCEL")
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.searchLocation,
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text("TRACK")
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               ListView(
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                        color: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                        child: Column(
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 110,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: ExactAssetImage(
-                                              'images/document.jpg'))),
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Official documents",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Status :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Dellivered"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Ordered date :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 20 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Delivered By :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Prajwal Rai"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Deadline :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 24 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
                             ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Dellivered"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-                      Divider(),
-                      Container(
-                        color: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                        child: Column(
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 110,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: ExactAssetImage(
-                                              'images/document.jpg'))),
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Official documents",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Status :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Cancelled"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Ordered date :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 20 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Delivered By :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Prajwal Rai"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Deadline :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 24 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
                             ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Cancelled"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-                      Divider(),
-                      Container(
-                        color: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                        child: Column(
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 110,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: ExactAssetImage(
-                                              'images/document.jpg'))),
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Official documents",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Status :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Urgent"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Ordered date :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 20 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Delivered By :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Prajwal Rai"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Deadline :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 24 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
                             ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Dellivered"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-                      Divider(),
-                      Container(
-                        color: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-                        child: Column(
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 110,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: ExactAssetImage(
-                                              'images/document.jpg'))),
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Official documents",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Status :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Urgent"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Ordered date :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 20 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Delivered By :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" Prajwal Rai"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 4.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                            text: ('Deadline :'),
-                                            style: TextStyle(
-                                                color: Colors.grey[500]),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: (" 24 Feb 2020"),
-                                                  style: TextStyle(
-                                                      color: Colors.black54))
-                                            ]),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
                             ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Cancelled"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Urgent"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                  Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 110,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: ExactAssetImage(
+                                          'images/document.jpg'))),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Official documents",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Status :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Urgent"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Ordered date :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 20 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Delivered By :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" Prajwal Rai"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: ('Deadline :'),
+                                        style:
+                                            TextStyle(color: Colors.grey[500]),
+                                        children: <TextSpan>[
+                                          TextSpan(
+                                              text: (" 24 Feb 2020"),
+                                              style: TextStyle(
+                                                  color: Colors.black54))
+                                        ]),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               )
