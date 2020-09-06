@@ -24,7 +24,7 @@ class _confirmBookState extends State<confirmBook> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime selectedDate = DateTime.now();
+    DateTime selectedDate;
 
     return Scaffold(
       body: Stack(
@@ -213,7 +213,15 @@ class _confirmBookState extends State<confirmBook> {
                                 Expanded(
                                   child: FlatButton(
                                     color: color.primary,
-                                    onPressed: () => {},
+                                    onPressed: () => {
+                                      showDatePicker(
+                                          context: context,
+                                          initialDate: selectedDate == null
+                                              ? DateTime.now()
+                                              : selectedDate,
+                                          firstDate: DateTime(2010),
+                                          lastDate: DateTime(2021))
+                                    },
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Row(
@@ -247,7 +255,7 @@ class _confirmBookState extends State<confirmBook> {
                                     onPressed: () {
                                       Navigator.of(context)
                                           .push(MaterialPageRoute(
-                                        builder: (context) => detailPage(),
+                                        builder: (context) => trackPage(),
                                       ));
                                     },
                                     child: Padding(

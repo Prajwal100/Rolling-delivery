@@ -8,12 +8,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rollingdelivery/color.dart' as color;
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
-class detailPage extends StatefulWidget {
+class trackPage extends StatefulWidget {
   @override
-  _detailPageState createState() => _detailPageState();
+  _trackPageState createState() => _trackPageState();
 }
 
-class _detailPageState extends State<detailPage> {
+class _trackPageState extends State<trackPage> {
   Completer<GoogleMapController> _controller = Completer();
   static const LatLng _center = const LatLng(45.521563, -122.677433);
 
@@ -93,68 +93,78 @@ class _detailPageState extends State<detailPage> {
                                         fontWeight: FontWeight.bold)),
                               ),
                             ),
-                            Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.circle,
-                                  color: Colors.green,
-                                  size: 16,
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Ratnapark',
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.black))),
-                                    Text('Ratnapark Kathmandu - Nepal',
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.grey))),
-                                  ],
-                                )
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 0.0, horizontal: 20),
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    FontAwesomeIcons.circle,
+                                    color: Colors.green,
+                                    size: 16,
+                                  ),
+                                  SizedBox(
+                                    width: 6,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Ratnapark',
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black))),
+                                      Text('Ratnapark Kathmandu - Nepal',
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.grey))),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                             SizedBox(
                               height: 8,
                             ),
-                            Row(
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.circle,
-                                  color: Colors.green,
-                                  size: 16,
-                                ),
-                                SizedBox(
-                                  width: 6,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Baneshwor',
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.black))),
-                                    Text('Baneshwor Kathmandu - Nepal',
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.grey))),
-                                  ],
-                                )
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 0.0, horizontal: 20),
+                              child: Row(
+                                children: [
+                                  FaIcon(
+                                    FontAwesomeIcons.dotCircle,
+                                    color: Colors.green,
+                                    size: 16,
+                                  ),
+                                  SizedBox(
+                                    width: 6,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Baneshwor',
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black))),
+                                      Text('Baneshwor Kathmandu - Nepal',
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.grey))),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                             Divider(
                               height: 20,
@@ -172,7 +182,8 @@ class _detailPageState extends State<detailPage> {
                             ),
                             Divider(),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 20),
                               child: Row(
                                 children: [
                                   FaIcon(FontAwesomeIcons.biking,
@@ -191,7 +202,8 @@ class _detailPageState extends State<detailPage> {
                             ),
                             Divider(),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 20),
                               child: Row(
                                 children: [
                                   FaIcon(FontAwesomeIcons.moneyBill,

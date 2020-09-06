@@ -397,7 +397,7 @@ class moreDialogue extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 180,
+        height: 330,
         child: Dialog(
           child: Column(
             children: [
@@ -413,6 +413,20 @@ class moreDialogue extends StatelessWidget {
                   title: Text('DELETE'),
                   trailing: FaIcon(
                     FontAwesomeIcons.trashAlt,
+                    size: 20,
+                  )),
+              Divider(),
+              ListTile(
+                  title: Text('MESSAGE'),
+                  trailing: FaIcon(
+                    FontAwesomeIcons.comment,
+                    size: 20,
+                  )),
+              Divider(),
+              ListTile(
+                  title: Text('CALL'),
+                  trailing: FaIcon(
+                    FontAwesomeIcons.phoneAlt,
                     size: 20,
                   )),
             ],

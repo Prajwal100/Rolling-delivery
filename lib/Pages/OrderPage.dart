@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rollingdelivery/Pages/detailPage.dart';
 import 'package:rollingdelivery/color.dart' as color;
 
 class OrderPage extends StatefulWidget {
@@ -230,7 +231,12 @@ class _OrderPageState extends State<OrderPage> with TickerProviderStateMixin {
                                 ),
                                 Expanded(
                                   child: FlatButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                        builder: (context) => trackPage(),
+                                      ));
+                                    },
                                     child: Row(
                                       children: [
                                         FaIcon(

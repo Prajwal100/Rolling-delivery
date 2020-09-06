@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rollingdelivery/Pages/calender.dart';
+import 'package:rollingdelivery/Pages/profile.dart';
 import 'package:rollingdelivery/color.dart' as color;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -98,7 +100,11 @@ class _profilePageState extends State<profilePage> {
                   ),
                   FlatButton(
                     splashColor: color.secondary,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ProfileMenu(),
+                      ));
+                    },
                     child: Row(
                       children: [
                         FaIcon(
@@ -259,7 +265,11 @@ class _profilePageState extends State<profilePage> {
                   Divider(),
                   FlatButton(
                     splashColor: color.secondary,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => calendar(),
+                      ));
+                    },
                     child: Row(
                       children: [
                         FaIcon(
