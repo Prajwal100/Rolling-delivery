@@ -222,7 +222,7 @@ class _trackPageState extends State<trackPage> {
                             ),
                             Divider(),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 'Manage ride'.toUpperCase(),
                                 style: GoogleFonts.robotoCondensed(

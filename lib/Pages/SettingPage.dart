@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rollingdelivery/Pages/calender.dart';
+import 'package:rollingdelivery/Pages/favoriteRiderMenu.dart';
 import 'package:rollingdelivery/Pages/profile.dart';
+import 'package:rollingdelivery/Pages/savedAddress.dart';
 import 'package:rollingdelivery/color.dart' as color;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -124,7 +126,11 @@ class _profilePageState extends State<profilePage> {
                   Divider(),
                   FlatButton(
                     splashColor: color.secondary,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => savedAddress(),
+                      ));
+                    },
                     child: Row(
                       children: [
                         FaIcon(
@@ -144,7 +150,11 @@ class _profilePageState extends State<profilePage> {
                   Divider(),
                   FlatButton(
                     splashColor: color.secondary,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => favoriteRiderMenu(),
+                      ));
+                    },
                     child: Row(
                       children: [
                         FaIcon(
@@ -227,17 +237,39 @@ class _profilePageState extends State<profilePage> {
                     splashColor: color.secondary,
                     onPressed: () {},
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FaIcon(
-                          FontAwesomeIcons.globeAsia,
-                          size: 20,
+                        Row(
+                          children: [
+                            FaIcon(
+                              FontAwesomeIcons.globeAsia,
+                              size: 20,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              'Language',
+                              style: TextStyle(fontSize: 16),
+                            )
+                          ],
                         ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          'Language',
-                          style: TextStyle(fontSize: 16),
+                        FlutterSwitch(
+                          height: 26,
+                          width: 70,
+                          value: status,
+                          borderRadius: 30,
+                          toggleSize: 20,
+                          activeText: 'eng',
+                          inactiveText: 'nep',
+                          inactiveColor: Colors.green,
+                          activeTextColor: Colors.white,
+                          showOnOff: true,
+                          onToggle: (val) {
+                            setState(() {
+                              status = val;
+                            });
+                          },
                         )
                       ],
                     ),
